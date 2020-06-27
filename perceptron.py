@@ -11,7 +11,7 @@ def clases(x, y):
             class_1.append(x[i])
     return class_1, class_2
 
-def perceptron():
+def perceptron(x_set, y_set ):
     print ("Procesando perceptron....")
     use_bias = True
     pesos = np.array([0.0, 0.0])
@@ -19,10 +19,6 @@ def perceptron():
     n_epochs = 1000
     error = True
     iteraciones = 1
-    #x_set = np.array([[-1,-1],[-1, -0.5],[-0.5,-4],[1,0],[-1,1.5]])
-    #y_set = np.array([1,1,1,-1,1]) 
-    x_set = np.array([[2,2],[1, 1],[0.5,2],[1,3]])
-    y_set = np.array([-1,1,1,-1]) 
     secuencia = [[0.0,0.0]]
     cant_errores = 0
     while error or n_epochs < 1000:
@@ -66,4 +62,6 @@ def perceptron():
     plt.quiver(x_inicial, y_inicial, pesos[0], pesos[1])
     plt.show()
 
-perceptron()
+x_set = np.array([[2,2],[1, 1],[0.5,2],[1,3]])
+y_set = np.array([-1,1,1,-1]) 
+perceptron(x_set, y_set)
